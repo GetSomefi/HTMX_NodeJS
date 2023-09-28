@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    style
+      include ../css/style.css
+  body
+    div(id="content")
+        header(class="header-section")
+        div(id="load-indicator")
+        div(class="data-container")
+            h3(id="top-message")= topMsg
+            h2(id="top-message2")= title 
+            if msg
+                h1(id="header")= msg
+            else 
+                h1(id="header")
+        
+        form(
+          hx-get="./write"
+          name="content"
+          hx-target="#search-results" 
+          hx-indicator="#loading")
+          input(type="text" name="nick" placeholder="Nickname")
+          input(type="text" name="content" placeholder="Message")
+          input(type="submit")
+          div(hx-get="/read" hx-trigger="every 3s" id="search-results")  Please wait...
+          div(id="loading" class="htmx-indicator") Loading..
+
+    script
+      include ../node_modules/htmx.org/dist/htmx.js
+
+      
