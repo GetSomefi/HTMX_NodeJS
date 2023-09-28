@@ -20,14 +20,16 @@ html
           hx-get="./write"
           name="content"
           hx-target="#search-results" 
-          hx-indicator="#loading")
+          hx-indicator="#loading"
+          id="chat-form")
           input(type="text" name="nick" placeholder="Nickname")
-          input(type="text" name="content" placeholder="Message")
+          input(type="text" name="content" placeholder="Message" id="msg")
           input(type="submit")
-          div(hx-get="/read" hx-trigger="every 3s" id="search-results")  Please wait...
-          div(id="loading" class="htmx-indicator") Loading..
+        div(hx-get="/read" hx-trigger="every 3s" id="search-results")  Please wait...
+        div(id="loading" class="htmx-indicator") Loading..
 
     script
       include ../node_modules/htmx.org/dist/htmx.js
+      include ../js/script.js
 
       

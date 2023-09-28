@@ -9,6 +9,11 @@ div#search-results {
     color: #FFF;
 }
 
+.response{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 /*htmx indicator*/
 .htmx-indicator{
     display:none;
