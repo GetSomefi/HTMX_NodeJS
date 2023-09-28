@@ -1,0 +1,21 @@
+div#content {
+    max-width: 320px;
+    margin: auto;
+}
+
+div#search-results {
+    min-height: 40px;
+    background: black;
+    color: #FFF;
+}
+
+/*htmx indicator*/
+.htmx-indicator{
+    display:none;
+}
+.htmx-request .htmx-indicator{
+    display:inline;
+}
+.htmx-request.htmx-indicator{
+    display:inline;
+}

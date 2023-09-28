@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "htmx.org": "^1.9.6",
+    "http": "^0.0.1-security",
+    "pug": "^3.0.2"
+  }
+}

@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    style
+      include ../css/style.css
+  body
+    div(id="content")
+        header(class="header-section")
+        div(id="load-indicator")
+        div(class="data-container")
+            h3(id="top-message")= topMsg
+            h2(id="top-message2")= title 
+            if msg
+                h1(id="header")= msg
+            else 
+                h1(id="header")
+        
+        input(type="text" name="q"
+        hx-get="./HTMX_resp"
+        hx-trigger="keyup delay:500ms"
+        hx-target="#search-results"
+        placeholder="Search..."
+        hx-indicator="#loading")
+        div(id="search-results")
+        div(id="loading" class="htmx-indicator") Loading..
+
+    script
+      include ../node_modules/htmx.org/dist/htmx.js
+
+      
